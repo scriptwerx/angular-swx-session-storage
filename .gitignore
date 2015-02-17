@@ -1,0 +1,5 @@
+.idea
+angular-swx-session-storage.iml
+test/coverage
+bower_components
+node_modules

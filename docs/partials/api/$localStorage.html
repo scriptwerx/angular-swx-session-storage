@@ -1,0 +1,77 @@
+<h1><code ng:non-bindable="">$localStorage</code>
+<div><span class="hint"></span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="-localstorage-page"><p>Provides a key-value (string-object) storage, that is backed by localStorage with support for expiry (in days).
+Objects put or retrieved from this storage are automatically serialized or deserialized by angular&#39;s toJson/fromJson.</p>
+</div></div>
+<h2 id="dependencies">Dependencies</h2>
+<ul class="dependencies"><li><code ng:non-bindable=""><a href="api/ng.$window">$window</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="api/ng.$location">$location</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="api/ng.$cacheFactory">$cacheFactory</a></code>
+</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<div class="usage"><pre class="prettyprint linenums">$localStorage($window, $location, $cacheFactory);</pre>
+<h4 id="usage_parameters">Parameters</h4><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>$window</td><td><a href="" class="label type-hint type-hint-service">service</a></td><td><div class="-localstorage-page"><p>The $window service.</p>
+</div></td></tr><tr><td>$location</td><td><a href="" class="label type-hint type-hint-service">service</a></td><td><div class="-localstorage-page"><p>The $location service.</p>
+</div></td></tr><tr><td>$cacheFactory</td><td><a href="" class="label type-hint type-hint-service">service</a></td><td><div class="-localstorage-page"><p>The $cacheFactory service.</p>
+</div></td></tr></tbody></table></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_empty">empty()</h3>
+<div class="empty"><div class="-localstorage-empty-page"><p>Delete all data from session storage and localStorage.</p>
+</div><h4 id="methods_empty_example">Example</h4>
+<div class="example"><div class="-localstorage-empty-page"><pre><code class="lang-js">$localStorage.empty();</code></pre>
+</div></div>
+</div>
+</li>
+<li><h3 id="methods_get">get(key)</h3>
+<div class="get"><div class="-localstorage-get-page"><p>Get data from localStorage, will return from session cache if possible for greater performance.</p>
+</div><h5 id="methods_get_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>key</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="-localstorage-get-page"><p>The key of the stored data to retrieve.</p>
+</div></td></tr></tbody></table><h5 id="methods_get_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">*</a></td><td><div class="-localstorage-get-page"><p>The value of the stored data or undefined.</p>
+</div></td></tr></table><h4 id="methods_get_example">Example</h4>
+<div class="example"><div class="-localstorage-get-page"><pre><code class="lang-js">$localStorage.get(&#39;myKey&#39;);</code></pre>
+</div></div>
+</div>
+</li>
+<li><h3 id="methods_prefix">prefix(val)</h3>
+<div class="prefix"><div class="-localstorage-prefix-page"><p>Overrides the default domain prefix.</p>
+<p><strong>N.B. Destroys the existing cache.</strong></p>
+</div><h5 id="methods_prefix_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>val</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="-localstorage-prefix-page"><p>The string to add to the persistent data prefix.</p>
+</div></td></tr></tbody></table><h4 id="methods_prefix_example">Example</h4>
+<div class="example"><div class="-localstorage-prefix-page"><pre><code class="lang-js">$localStorage.prefix(&#39;myPrefix&#39;);</code></pre>
+</div></div>
+</div>
+</li>
+<li><h3 id="methods_put">put(key, value)</h3>
+<div class="put"><div class="-localstorage-put-page"><p>Add data to storage</p>
+</div><h5 id="methods_put_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>key</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="-localstorage-put-page"><p>The key to store the data with.</p>
+</div></td></tr><tr><td>value</td><td><a href="" class="label type-hint type-hint-object">*</a></td><td><div class="-localstorage-put-page"><p>The data to store.
+[@param {number} expires] (expiry in days)</p>
+</div></td></tr></tbody></table><h4 id="methods_put_example">Example</h4>
+<div class="example"><div class="-localstorage-put-page"><pre><code class="lang-js">$localStorage.put(&#39;myKey&#39;, { data: &#39;my_data&#39; });</code></pre>
+</div></div>
+</div>
+</li>
+<li><h3 id="methods_remove">remove(key)</h3>
+<div class="remove"><h5 id="methods_remove_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>key</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="-localstorage-remove-page"><p>The key of the stored data to remove.</p>
+</div></td></tr></tbody></table><h4 id="methods_remove_example">Example</h4>
+<div class="example"><div class="-localstorage-remove-page"><pre><code class="lang-js">$localStorage.remove(&#39;myKey&#39;);</code></pre>
+</div></div>
+</div>
+</li>
+</ul>
+</div>
+<h2 id="example">Example</h2>
+<div class="example"><div class="-localstorage-page"><pre><code class="lang-js">myApp.$inject = [&#39;$localStorage&#39;];
+function myApp($localStorage) {
+  // Your app
+}
+
+angular
+  .module(&#39;myApp&#39;, [&#39;swxLocalStorage&#39;]);</code></pre>
+</div></div>
+</div>
