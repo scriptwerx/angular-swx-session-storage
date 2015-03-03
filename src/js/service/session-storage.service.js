@@ -6,10 +6,14 @@
    * @ngdoc service
    * @name $sessionStorage
    *
+   * @requires $window
+   * @requires $location
    * @requires $cacheFactory
    *
    * @description Provides a key-value (string-object) session storage with expiry option (in minutes).
    *
+   * @param {service} $window The $window service.
+   * @param {service} $location The $location service.
    * @param {service} $cacheFactory The $cacheFactory service.
    *
    * @example
@@ -25,11 +29,37 @@
    *
    * @ngInject
    */
-  function $sessionStorage ($cacheFactory) {
+  function $sessionStorage ($window, $location, $cacheFactory) {
 
-    var oneMinute = 60 * 1000,
+    var prefix = $location.host().substring(0, $location.host().indexOf('.')) + '_',
+      oneMinute = 60 * 1000,
+      isSessionStorageAvailable = true,
+      webStorage = $window.sessionStorage,
       cache = $cacheFactory('session-cache'),
       service = this;
+
+    /**
+     * @ngdoc method
+     * @name $sessionStorage.prefix
+     * @methodOf $sessionStorage
+     *
+     * @description
+     * Overrides the default domain prefix.
+     *
+     * <strong>N.B. Destroys the existing cache.</strong>
+     *
+     * @param {string} val The string to add to the persistent data prefix.
+     *
+     * @example
+     * ```js
+     * $sessionStorage.prefix('myPrefix');
+     * ```
+     */
+    service.prefix = function(val) {
+      prefix = val + '_';
+      cache.destroy();
+      cache = $cacheFactory(prefix + 'cache');
+    };
 
     /**
      * @ngdoc function
@@ -51,6 +81,11 @@
       }
 
       cache.put(key, dataToStore);
+
+      if (isSessionStorageAvailable) {
+        webStorage.setItem(prefix + key, angular.toJson(dataToStore, false));
+      }
+
       return value;
     };
 
@@ -71,7 +106,11 @@
       if (cache.get(key)) {
         item = cache.get(key);
       }
-      else {
+      else if (isSessionStorageAvailable) {
+        item = angular.fromJson(webStorage.getItem(prefix + key));
+      }
+
+      if (!item) {
         return void 0;
       }
 
@@ -79,6 +118,8 @@
         service.remove(key);
         return void 0;
       }
+
+      cache.put(key, item);
 
       return item.data;
     };
@@ -93,6 +134,9 @@
      * @param {String} key The key of the stored data to remove.
      */
     service.remove = function(key) {
+      if (isSessionStorageAvailable) {
+        webStorage.removeItem(prefix + key);
+      }
       cache.remove(key);
     };
 
@@ -104,13 +148,38 @@
      * @description Delete all data from session storage and cookie.
      */
     service.empty = function() {
+      if (isSessionStorageAvailable) {
+        webStorage.clear();
+      }
       cache.removeAll();
     };
+
+    /**
+     * @private
+     * @description
+     * Check for $window.localStorage availability and functionality
+     */
+    (function() {
+      if (!webStorage) {
+        isSessionStorageAvailable = false;
+      }
+      else {
+        // Some browsers will return true when in private browsing mode so test to make sure it's functional.
+        try {
+          var key = 'swxTest_' + Math.round(Math.random() * 1e7);
+          webStorage.setItem(key, 'test');
+          webStorage.removeItem(key);
+        }
+        catch (e) {
+          isSessionStorageAvailable = false;
+        }
+      }
+    })();
   }
 
   /**
    * @ngdoc overview
-   * @name Angular-swx-session-storage
+   * @name swxSessionStorage
    *
    * @description
    * $sessionService service for use in your AngularJS applications.

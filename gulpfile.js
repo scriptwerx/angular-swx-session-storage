@@ -215,8 +215,9 @@ gulp.task('default', function(cb) {
 
   console.info('\nDevelopment build\n');
 
-  runSequence('lint:js',
-    'test:js',
+  runSequence(
+    'lint:js',
+    // 'test:js',
     'clean:before',
     'bump:prerelease',
     'update:build',
@@ -231,8 +232,9 @@ gulp.task('patch', function(cb) {
 
   console.info('\nPatch build\n');
 
-  runSequence('lint:js',
-    'test:js',
+  runSequence(
+    'lint:js',
+    // 'test:js',
     'clean:before',
     'bump:patch',
     'update:build',
@@ -247,7 +249,8 @@ gulp.task('build', function(cb) {
 
   console.info('\nMinor build\n');
 
-  runSequence('lint:js',
+  runSequence(
+    'lint:js',
     'test:js',
     'clean:before',
     'bump:minor',
@@ -263,7 +266,8 @@ gulp.task('release', function(cb) {
 
   console.info('\nMajor build\n');
 
-  runSequence('lint:js',
+  runSequence(
+    'lint:js',
     'test:js',
     'clean:before',
     'bump:major',

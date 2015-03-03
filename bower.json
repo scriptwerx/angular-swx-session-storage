@@ -1,44 +1,44 @@
 {
-  "name": "Angular-swx-session-storage ($sessionStorage)",
-  "version": "0.0.1",
-  "authors": [
-    "Paul Massey, paul.massey@scriptwerx.io, http://www.scriptwerx.io"
-  ],
-  "description": "Provides a key-value (string-object) session storage with expiry option (in minutes).",
-  "keywords": [
-    "AngularJS",
-    "Angular",
-    "Angular Session Storage",
-    "$sessionStorage",
-    "Angular Storage",
-    "Session Storage",
-    "JavaScript",
-    "Component",
-    "Components",
-    "Scriptwerx",
-    "Genoveus"
-  ],
-  "license": "http://opensource.org/licenses/MIT",
-  "homepage": "https://github.com/scriptwerx/angular-swx-session-storage",
-  "ignore": [
-    "package.json",
-    "gulpfile.js",
-    "angular-swx-local-storage.iml",
-    "**/*.md",
-    "bin",
-    "docs",
-    "src",
-    "lib",
-    "test",
-    "node_modules",
-    "bower_components"
-  ],
-  "main": [
-    "./release/swx-local-storage.js",
-    "./release/swx-local-storage.min.js",
-    "./release/swx-local-storage.min.js.map"
-  ],
-  "dependencies": {
-    "angular": ">=1 <1.4.0"
-  }
+	"name": "Angular-swx-session-storage ($sessionStorage)",
+	"version": "0.0.2",
+	"authors": [
+		"Paul Massey, paul.massey@scriptwerx.io, http://www.scriptwerx.io"
+	],
+	"description": "Provides a key-value (string-object) session storage with expiry option (in minutes).",
+	"keywords": [
+		"AngularJS",
+		"Angular",
+		"Angular Session Storage",
+		"$sessionStorage",
+		"Angular Storage",
+		"Session Storage",
+		"JavaScript",
+		"Component",
+		"Components",
+		"Scriptwerx",
+		"Genoveus"
+	],
+	"license": "http://opensource.org/licenses/MIT",
+	"homepage": "https://github.com/scriptwerx/angular-swx-session-storage",
+	"ignore": [
+		"package.json",
+		"gulpfile.js",
+		"angular-swx-local-storage.iml",
+		"**/*.md",
+		"bin",
+		"docs",
+		"src",
+		"lib",
+		"test",
+		"node_modules",
+		"bower_components"
+	],
+	"main": [
+		"./release/swx-local-storage.js",
+		"./release/swx-local-storage.min.js",
+		"./release/swx-local-storage.min.js.map"
+	],
+	"dependencies": {
+		"angular": ">=1 <1.4.0"
+	}
 }

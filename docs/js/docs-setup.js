@@ -1,25 +1,25 @@
 NG_DOCS={
   "sections": {
-    "api": "Angular-Local-Storage"
+    "api": "Angular-swx-session-storage"
   },
   "pages": [
     {
       "section": "api",
-      "id": "$localStorage",
-      "shortName": "$localStorage",
+      "id": "$sessionStorage",
+      "shortName": "$sessionStorage",
       "type": "service",
-      "moduleName": "$localStorage",
-      "shortDescription": "Provides a key-value (string-object) storage, that is backed by localStorage with support for expiry (in days).",
-      "keywords": "$cachefactory $inject $localstorage $location $window add angular api app automatically backed cache data days default delete deserialized destroys domain empty existing expires expiry function greater js key key-value localstorage method module my_data myapp mykey myprefix objects overrides performance persistent prefix remove retrieve retrieved return serialized service session storage store stored string support swxlocalstorage tojson undefined val"
+      "moduleName": "$sessionStorage",
+      "shortDescription": "Provides a key-value (string-object) session storage with expiry option (in minutes).",
+      "keywords": "$cachefactory $inject $location $sessionstorage $window add angular api app cache code cookie data default delete destroys domain empty existing expires expiry function greater js key key-value method minutes module myapp myprefix option overrides performance persistent prefix remove retrieve return service session storage store stored string swxsessionstorage undefined val"
     },
     {
       "section": "api",
-      "id": "Angular-Local-Storage",
-      "shortName": "Angular-Local-Storage",
+      "id": "swxSessionStorage",
+      "shortName": "swxSessionStorage",
       "type": "overview",
-      "moduleName": "Angular-Local-Storage",
-      "shortDescription": "$localStorage service for use in your AngularJS applications.",
-      "keywords": "$localstorage angular angular-local-storage angularjs api applications automatically backed days deserialized expiry key-value localstorage objects overview retrieved serialized service storage support tojson"
+      "moduleName": "swxSessionStorage",
+      "shortDescription": "$sessionService service for use in your AngularJS applications.",
+      "keywords": "$sessionservice angularjs api applications expiry key-value minutes option overview service session storage swxsessionstorage"
     }
   ],
   "apis": {
@@ -35,7 +35,7 @@ NG_DOCS={
       "js/prettify.js"
     ],
     "styles": [],
-    "title": "Angular-Local-Storage",
+    "title": "Angular-swx-session-storage",
     "html5Mode": true,
     "editExample": true,
     "navTemplate": false,
