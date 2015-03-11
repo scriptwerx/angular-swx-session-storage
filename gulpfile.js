@@ -245,10 +245,7 @@ gulp.task('header:js', function() {
 // Sequenced tasks
 //===============================================
 
-gulp.task('default', function(cb) {
-
-  console.info('\nDevelopment build\n');
-
+function generateBuild(bump, cb) {
   runSequence(
     'check:git',
     'prune:bower',
@@ -256,73 +253,33 @@ gulp.task('default', function(cb) {
     'lint:js',
     'test:js',
     'clean:before',
-    'bump:prerelease',
+    bump,
     'update:build',
     'update-version:bower',
     'annotate:js',
     'uglify:js',
     'header:js',
     'doc:js', cb);
+}
+
+gulp.task('default', function(cb) {
+  console.info('\nDevelopment build\n');
+  generateBuild('bump:prerelease', cb);
 });
 
 gulp.task('patch', function(cb) {
-
   console.info('\nPatch build\n');
-
-  runSequence(
-    'check:git',
-    'prune:bower',
-    'install:bower',
-    'lint:js',
-     'test:js',
-    'clean:before',
-    'bump:patch',
-    'update:build',
-    'update-version:bower',
-    'annotate:js',
-    'uglify:js',
-    'header:js',
-    'doc:js', cb);
+  generateBuild('bump:patch', cb);
 });
 
 gulp.task('build', function(cb) {
-
   console.info('\nMinor build\n');
-
-  runSequence(
-    'check:git',
-    'prune:bower',
-    'install:bower',
-    'lint:js',
-    'test:js',
-    'clean:before',
-    'bump:minor',
-    'update:build',
-    'update-version:bower',
-    'annotate:js',
-    'uglify:js',
-    'header:js',
-    'doc:js', cb);
+  generateBuild('bump:minor', cb);
 });
 
 gulp.task('release', function(cb) {
-
   console.info('\nMajor build\n');
-
-  runSequence(
-    'check:git',
-    'prune:bower',
-    'install:bower',
-    'lint:js',
-    'test:js',
-    'clean:before',
-    'bump:major',
-    'update:build',
-    'update-version:bower',
-    'annotate:js',
-    'uglify:js',
-    'header:js',
-    'doc:js', cb);
+  generateBuild('bump:major', cb);
 });
 
 //===============================================
