@@ -1,12 +1,45 @@
-/*jshint ignore:start */
+/* jshint ignore:start */
 var fs = require('fs'),
   gulp = require('gulp'),
+  sh = require('shelljs'),
+  bower = require('bower'),
   del = require('del'),
   vinylPaths = require('vinyl-paths'),
   runSequence = require('run-sequence'),
   stylish = require('jshint-stylish'),
   gulpLoadPlugins = require('gulp-load-plugins'),
   plugins = gulpLoadPlugins({ camelize: true });
+
+//===============================================
+// Install
+//===============================================
+
+gulp.task('check:git', function(done) {
+  if (!sh.which('git')) {
+    console.log(
+      '  ' + plugins.util.colors.red('Git is not installed.'),
+      '\n  Git, the version control system, is required to download Ionic.',
+      '\n  Download git here:', plugins.util.colors.cyan('http://git-scm.com/downloads') + '.',
+      '\n  Once git is installed, run \'' + plugins.util.colors.cyan('gulp install') + '\' again.'
+    );
+    process.exit(1);
+  }
+  done();
+});
+
+gulp.task('prune:bower', function() {
+  return bower.commands.prune()
+    .on('log', function(data) {
+      plugins.util.log('bower', plugins.util.colors.cyan(data.id), data.message);
+    });
+});
+
+gulp.task('install:bower', function() {
+  return bower.commands.install()
+    .on('log', function(data) {
+      plugins.util.log('bower', plugins.util.colors.cyan(data.id), data.message);
+    });
+});
 
 //===============================================
 // Helpers

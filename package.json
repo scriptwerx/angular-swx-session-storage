@@ -3,9 +3,9 @@
 	"organisation": "Scriptwerx",
 	"name": "Angular-swx-session-storage",
 	"description": "$sessionStorage service for use in your AngularJS applications.",
-	"version": "0.0.2",
-	"build": 5,
-	"timestamp": 1426070462824,
+	"version": "0.0.4",
+	"build": 8,
+	"timestamp": 1426075028067,
 	"copyright": "Scriptwerx 2015",
 	"license": "http://opensource.org/licenses/MIT",
 	"homepage": "http://www.scriptwerx.io",
@@ -53,6 +53,7 @@
 		"karma-nested-reporter": "^0.1.3",
 		"karma-phantomjs-launcher": "^0.1.4",
 		"run-sequence": "^1.0.1",
-		"vinyl-paths": "^1.0.0"
+		"vinyl-paths": "^1.0.0",
+		"shelljs": "^0.3.0"
 	}
 }
