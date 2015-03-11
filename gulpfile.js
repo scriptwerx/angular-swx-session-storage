@@ -250,6 +250,9 @@ gulp.task('default', function(cb) {
   console.info('\nDevelopment build\n');
 
   runSequence(
+    'check:git',
+    'prune:bower',
+    'install:bower',
     'lint:js',
     'test:js',
     'clean:before',
@@ -267,6 +270,9 @@ gulp.task('patch', function(cb) {
   console.info('\nPatch build\n');
 
   runSequence(
+    'check:git',
+    'prune:bower',
+    'install:bower',
     'lint:js',
      'test:js',
     'clean:before',
@@ -284,6 +290,9 @@ gulp.task('build', function(cb) {
   console.info('\nMinor build\n');
 
   runSequence(
+    'check:git',
+    'prune:bower',
+    'install:bower',
     'lint:js',
     'test:js',
     'clean:before',
@@ -301,6 +310,9 @@ gulp.task('release', function(cb) {
   console.info('\nMajor build\n');
 
   runSequence(
+    'check:git',
+    'prune:bower',
+    'install:bower',
     'lint:js',
     'test:js',
     'clean:before',
