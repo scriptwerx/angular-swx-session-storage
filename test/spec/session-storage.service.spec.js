@@ -20,7 +20,7 @@ describe('$localStorage', function() {
       cache = {};
     },
     destroy: function() {
-      // Empty
+      cache = {};
     }
   };
 
@@ -51,6 +51,28 @@ describe('$localStorage', function() {
       expect(suite.service.empty).toBeFunction();
     });
 
+  });
+
+  describe('prefix method', function() {
+
+    beforeEach(function() {
+      spyOn(suite.mockCachingService, 'destroy').and.callThrough();
+      cache = {};
+    });
+
+    afterEach(function() {
+      cache = {};
+    });
+
+    it('should set the prefix and destroy the existing cache', function() {
+      suite.service.put('some_key', 'some_value');
+      expect(suite.service.get('some_key')).toBe('some_value');
+
+      suite.service.prefix('new_prefix');
+      expect(suite.service.get('some_key')).toBe(void 0);
+
+      expect(suite.mockCachingService.destroy).toHaveBeenCalled();
+    });
   });
 
   describe('put method', function() {

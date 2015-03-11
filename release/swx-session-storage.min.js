@@ -2,7 +2,7 @@
  * Angular-swx-session-storage - $sessionStorage service for use in your AngularJS applications.
  * @author Paul Massey, paul.massey@scriptwerx.io
  * @version v0.0.2
- * @build 1 - Tue Mar 03 2015 14:19:25 GMT+0000 (GMT)
+ * @build 5 - Wed Mar 11 2015 10:41:03 GMT+0000 (GMT)
  * @link http://www.scriptwerx.io
  * @license http://opensource.org/licenses/MIT
  */

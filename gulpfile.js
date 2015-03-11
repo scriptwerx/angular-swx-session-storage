@@ -1,4 +1,4 @@
-
+/*jshint ignore:start */
 var fs = require('fs'),
   gulp = require('gulp'),
   del = require('del'),
@@ -37,7 +37,7 @@ gulp.task('clean:before', function() {
  Lint the JavaScript
  */
 gulp.task('lint:js', function() {
-  return gulp.src('./src/js/*.js')
+  return gulp.src(['./src/js/**/*.js', './test/spec/**/*.spec.js'])
     .pipe(plugins.jshint())
     .on('error', getErrorHandler())
     .pipe(plugins.jshint.reporter(stylish))
@@ -51,8 +51,9 @@ gulp.task('test:js', function() {
 
   var src = [
     './bower_components/angular/angular.js',
+    './bower_components/angular-mocks/angular-mocks.js',
     './src/js/**/*.js',
-    './test/spec/**/*.test.js'
+    './test/spec/**/*.spec.js'
   ];
 
   return gulp.src(src)
@@ -217,7 +218,7 @@ gulp.task('default', function(cb) {
 
   runSequence(
     'lint:js',
-    // 'test:js',
+    'test:js',
     'clean:before',
     'bump:prerelease',
     'update:build',
@@ -234,7 +235,7 @@ gulp.task('patch', function(cb) {
 
   runSequence(
     'lint:js',
-    // 'test:js',
+     'test:js',
     'clean:before',
     'bump:patch',
     'update:build',
@@ -282,3 +283,4 @@ gulp.task('release', function(cb) {
 //===============================================
 // End of file
 //===============================================
+/*jshint ignore:end */
