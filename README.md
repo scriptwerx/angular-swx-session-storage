@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/scriptwerx/angular-swx-session-storage.svg?branch=master)](https://travis-ci.org/scriptwerx/angular-swx-session-storage) [![Coverage Status](https://coveralls.io/repos/scriptwerx/angular-swx-session-storage/badge.svg)](https://coveralls.io/r/scriptwerx/angular-swx-session-storage)
 
-$localStorage service for use in your AngularJS applications.
+$sessionStorage service for use in your AngularJS applications.
 
 Provides a key-value (string-object) storage, that is backed by localStorage with support for expiry (in days).
 
