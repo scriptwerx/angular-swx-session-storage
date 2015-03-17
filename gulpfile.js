@@ -14,13 +14,11 @@ var fs = require('fs'),
 // Install
 //===============================================
 
-gulp.task('check:git', function(done) {
-  if (!sh.which('git')) {
+gulp.task('check:git', function (done) {
+  if (! sh.which('git')) {
     console.log(
       '  ' + plugins.util.colors.red('Git is not installed.'),
-      '\n  Git, the version control system, is required to download Ionic.',
-      '\n  Download git here:', plugins.util.colors.cyan('http://git-scm.com/downloads') + '.',
-      '\n  Once git is installed, run \'' + plugins.util.colors.cyan('gulp install') + '\' again.'
+      '\n  Download git here:', plugins.util.colors.cyan('http://git-scm.com/downloads') + '.'
     );
     process.exit(1);
   }
