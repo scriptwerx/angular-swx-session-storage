@@ -2,7 +2,7 @@
 
 # angular-swx-session-storage
 
-[![Build Status](https://travis-ci.org/scriptwerx/angular-swx-session-storage.svg?branch=master)](https://travis-ci.org/scriptwerx/angular-swx-session-storage) [![Coverage Status](https://coveralls.io/repos/scriptwerx/angular-swx-session-storage/badge.svg)](https://coveralls.io/r/scriptwerx/angular-swx-session-storage)
+[![Bower version](https://badge.fury.io/bo/angular-swx-session-storage.svg)](http://badge.fury.io/bo/angular-swx-session-storage) [![Build Status](https://travis-ci.org/scriptwerx/angular-swx-session-storage.svg?branch=master)](https://travis-ci.org/scriptwerx/angular-swx-session-storage) [![Coverage Status](https://coveralls.io/repos/scriptwerx/angular-swx-session-storage/badge.svg)](https://coveralls.io/r/scriptwerx/angular-swx-session-storage)
 
 $sessionStorage service for use in your AngularJS applications.
 
