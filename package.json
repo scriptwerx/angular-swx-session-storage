@@ -1,11 +1,11 @@
 {
 	"author": "Paul Massey, paul.massey@scriptwerx.io",
 	"organisation": "Scriptwerx",
-	"name": "Angular-swx-session-storage",
+	"name": "angular-swx-session-storage",
 	"description": "$sessionStorage service for use in your AngularJS applications.",
-	"version": "0.0.6",
-	"build": 12,
-	"timestamp": 1428500999620,
+	"version": "0.0.7",
+	"build": 14,
+	"timestamp": 1434364784478,
 	"copyright": "Scriptwerx 2015",
 	"license": "http://opensource.org/licenses/MIT",
 	"homepage": "http://www.scriptwerx.io",
@@ -26,6 +26,9 @@
 		"Scriptwerx",
 		"Genoveus"
 	],
+	"dependencies": {
+		"angular": "^1.2"
+	},
 	"devDependencies": {
 		"bower": "^1.3.12",
 		"del": "^0.1.3",

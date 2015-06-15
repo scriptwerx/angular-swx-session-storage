@@ -12,6 +12,12 @@ Objects put or retrieved from this storage are automatically serialized or deser
 
 ## Installation
 
+Node Package Manager:
+
+    npm install --save-dev angular-swx-session-storage
+
+Bower:
+
     bower install angular-swx-session-storage
 
 ## Usage

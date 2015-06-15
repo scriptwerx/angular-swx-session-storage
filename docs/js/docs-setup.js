@@ -1,6 +1,6 @@
 NG_DOCS={
   "sections": {
-    "api": "Angular-swx-session-storage"
+    "api": "angular-swx-session-storage"
   },
   "pages": [
     {
@@ -35,7 +35,7 @@ NG_DOCS={
       "js/prettify.js"
     ],
     "styles": [],
-    "title": "Angular-swx-session-storage",
+    "title": "angular-swx-session-storage",
     "html5Mode": true,
     "editExample": true,
     "navTemplate": false,
