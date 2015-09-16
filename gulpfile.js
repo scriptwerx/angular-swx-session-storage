@@ -192,7 +192,7 @@ gulp.task('update-version:bower', function () {
  Auto annotate the JavaScript and copy to ./release.
  */
 gulp.task('annotate:js', function () {
-  return gulp.src('./src/js/service/*.js')
+  return gulp.src(['./src/js/service/*.js', '!./src/js/service/*.spec.js'])
     .pipe(plugins.ngAnnotate({
       remove: true,
       add: true,
@@ -207,14 +207,13 @@ gulp.task('annotate:js', function () {
  Minify/uglify the JavaScript
  */
 gulp.task('uglify:js', function() {
-  return gulp.src(['./release/swx-session-storage.js'])
-    .pipe(plugins.uglifyjs('swx-session-storage.min.js', {
-      outSourceMap: true,
-      basePath: '/release',
-      sourceRoot: '/'
-    }))
-    .pipe(gulp.dest('./release'))
-    .on('error', getErrorHandler());
+    return gulp.src(['./release/swx-session-storage.js'])
+        .pipe(plugins.sourcemaps.init())
+        .pipe(plugins.uglify())
+        .pipe(plugins.rename('swx-session-storage.min.js'))
+        .pipe(plugins.sourcemaps.write('.'))
+        .pipe(gulp.dest('./release'))
+        .on('error', getErrorHandler());
 });
 
 /*

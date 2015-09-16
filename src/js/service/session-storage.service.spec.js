@@ -118,6 +118,15 @@ describe('$localStorage', function() {
       expect(suite.mockCachingService.get).toHaveBeenCalledWith('some_key');
     });
 
+    it('should return a false Boolean stored value from session cache correctly', function() {
+
+      suite.service.put('some_key', false);
+
+      expect(suite.service.get('some_key')).toBeDefined();
+      expect(suite.service.get('some_key')).toBeFalse();
+      expect(suite.mockCachingService.get).toHaveBeenCalledWith('some_key');
+    });
+
     it('should retrieve item with expiry session cache if still valid', function() {
       suite.service.put('some_key', 'some_value', 1);
       expect(suite.service.get('some_key')).toBe('some_value');
