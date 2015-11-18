@@ -34,10 +34,14 @@
     var prefix = $location.host().substring(0, $location.host().indexOf('.')) + '_',
       oneMinute = 60 * 1000,
       isSessionStorageAvailable = true,
-      webStorage = $window.sessionStorage,
       cache = $cacheFactory('session-cache'),
       service = this;
 
+    try {
+      var webStorage = $window.sessionStorage;
+    } catch (ex) {
+      var webStorage = false;
+    }
     /**
      * @ngdoc method
      * @name $sessionStorage.prefix
