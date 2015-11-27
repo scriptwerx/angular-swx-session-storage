@@ -78,21 +78,21 @@ gulp.task('lint:js', function() {
 /*
  Test the JavaScript.
  */
-gulp.task('test:js', function() {
+gulp.task('test:js', function(cb) {
 
-  var src = [
-    './bower_components/angular/angular.js',
-    './bower_components/angular-mocks/angular-mocks.js',
-    './src/js/**/*.js',
-    './test/spec/**/*.spec.js'
-  ];
+    var Server = require('karma').Server;
 
-  return gulp.src(src)
-    .pipe(plugins.karma({
-      configFile: './test/config/karma.conf.js',
-      action: 'run'
-    }))
-    .on('error', getErrorHandler());
+    new Server({
+        files     : [
+            './bower_components/angular/angular.js',
+            './bower_components/angular-mocks/angular-mocks.js',
+            './src/js/**/*.js',
+            './test/spec/**/*.spec.js'
+        ],
+        configFile: __dirname + '/test/config/karma.conf.js',
+        singleRun : true
+    }, cb).start();
+
 });
 
 //===============================================
