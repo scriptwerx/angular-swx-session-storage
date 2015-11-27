@@ -1,6 +1,6 @@
 {
 	"name": "Angular-swx-session-storage ($sessionStorage)",
-	"version": "0.0.8",
+	"version": "0.0.9",
 	"authors": [
 		"Paul Massey, paul.massey@scriptwerx.io, http://www.scriptwerx.io"
 	],
@@ -37,9 +37,7 @@
 		"bower_components"
 	],
 	"main": [
-		"./release/swx-session-storage.js",
-		"./release/swx-session-storage.min.js",
-		"./release/swx-session-storage.min.js.map"
+		"./release/swx-session-storage.min.js"
 	],
 	"dependencies": {
 		"angular": ">=1 <1.4.0"
