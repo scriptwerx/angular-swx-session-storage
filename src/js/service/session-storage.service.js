@@ -134,6 +134,7 @@
          * @param {String} key The key of the stored data to remove.
          */
         service.remove = function(key) {
+            service.put(key, void 0);
             if (isSessionStorageAvailable) {
                 webStorage.removeItem(prefix + key);
             }
