@@ -1,8 +1,8 @@
 /**
  * angular-swx-session-storage - $sessionStorage service for use in your AngularJS applications.
  * @author Paul Massey, paul.massey@scriptwerx.io
- * @version v0.0.9
- * @build 20 - Fri Nov 27 2015 10:47:14 GMT+0000 (GMT)
+ * @version v1.0.0
+ * @build 30 - Tue Feb 09 2016 10:26:09 GMT+0000 (GMT)
  * @link http://www.scriptwerx.io
  * @license http://opensource.org/licenses/MIT
  */
@@ -37,6 +37,7 @@
      *
      * @ngInject
      */
+    $sessionStorage.$inject = ['$window', '$location', '$cacheFactory'];
     function $sessionStorage($window, $location, $cacheFactory) {
 
         var prefix = $location.host().substring(0, $location.host().indexOf('.')) + '_',
@@ -142,6 +143,7 @@
          * @param {String} key The key of the stored data to remove.
          */
         service.remove = function(key) {
+            service.put(key, void 0);
             if (isSessionStorageAvailable) {
                 webStorage.removeItem(prefix + key);
             }
@@ -182,7 +184,6 @@
 
         })();
     }
-    $sessionStorage.$inject = ['$window', '$location', '$cacheFactory'];
 
     /**
      * @ngdoc overview
