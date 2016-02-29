@@ -1,6 +1,6 @@
 {
-	"name": "Angular-swx-session-storage ($sessionStorage)",
-	"version": "1.0.1",
+	"name": "angular-swx-session-storage",
+	"version": "1.0.2",
 	"authors": [
 		"Paul Massey, paul.massey@scriptwerx.io, http://www.scriptwerx.io"
 	],
