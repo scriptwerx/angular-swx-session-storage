@@ -1,6 +1,6 @@
 {
 	"name": "Angular-swx-session-storage ($sessionStorage)",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"authors": [
 		"Paul Massey, paul.massey@scriptwerx.io, http://www.scriptwerx.io"
 	],
@@ -18,7 +18,7 @@
 		"Scriptwerx",
 		"Genoveus"
 	],
-	"license": "http://opensource.org/licenses/MIT",
+	"license": "MIT",
 	"homepage": "https://github.com/scriptwerx/angular-swx-session-storage",
 	"ignore": [
 		".jshintrc",
@@ -40,9 +40,9 @@
 		"./release/swx-session-storage.min.js"
 	],
 	"dependencies": {
-		"angular": ">=1 <1.4.0"
+		"angular": ">=1.2 <=1.5.0"
 	},
 	"devDependencies": {
-		"angular-mocks": ">=1 <1.4.0"
+		"angular-mocks": ">=1.2 <=1.5.0"
 	}
 }
