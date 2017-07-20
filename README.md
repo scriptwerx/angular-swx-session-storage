@@ -47,6 +47,10 @@ angular-swx-session-storage will function correctly within all browsers that sup
 
 For browsers with Web Storage disabled or in private browsing mode; a simple session Object fallback is used - **please be aware of the limitations in this scenario**.
 
+Code tested with [Browserstack](https://www.browserstack.com)
+
+[![Browserstack](browserstack.png)](https://www.browserstack.com)
+
 # Contributing
 If one of the existing models doesn't meet your needs, fork the project, implement the model and an example using it, send us a pull request, for consideration for inclusion in the project.
 
